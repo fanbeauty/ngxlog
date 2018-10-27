@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+    <title>TengYue Infra Team</title>
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-user-select: none;
+    }
+
+    body {
+        margin: 0 auto;
+        padding: 0;
+        min-width: 100%;
+        font-family: sans-serif;
+    }
+
+    .outer {
+        margin: 50px 0 50px 0;
+    }
+
+    .one {
+        height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .two {
+        height: 5px;
+        font-size: 14px;
+    }
+
+    #content {
+        width: 90%;
+        margin: auto;
+        height: 100px;
+    }
+
+    .inner {
+        border: 1px solid green;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px 0 #DBEEBD;
+    }
+
+    #content thead {
+        font-weight: bold;
+    }
+
+    #content tr {
+        height: 50px;
+    }
+
+    #content tr td {
+        text-align: center;
+    }
+
+    .four {
+        text-align: right;
+        font-style: italic;
+        font-size: 8px;
+    }
+
+    #google .g1 {
+        color: #1065e6;
+    }
+
+    #google .o1 {
+        color: #df432e;
+    }
+
+    #google .o2 {
+        color: #ffb709;
+    }
+
+    #google .g2 {
+        color: #166df1;
+    }
+
+    #google .l {
+        color: #03a25d;
+    }
+
+    #google .e {
+        color: #d64632;
+    }
+
+</style>
+<body bgcolor="#009587">
+<table bgcolor="#FFFFFF" class="outer" width="100%" cellspacing="0" cellpadding="0">
+    <tr class="one">
+        <td style="padding-bottom: 20px;">
+        {{.subject}}
+        </td>
+    </tr>
+    <tr class="two">
+        <td style="padding:10px;">
+            Hello,<span style="text-indent: 2em;">&nbsp;&nbsp;这是昨天{{.project}}日志的分析情况，请你及时更新到
+            <span id="google"><span class="g1">G</span><span class="o1">o</span><span class="o2">o</span><span
+                    class="g2">g</span><span
+                    class="l">l</span><span class="e">e</span>&nbsp;Doc</span>
+            上，谢谢！
+            </span>
+        </td>
+    </tr>
+    <tr class="three">
+        <td style="padding: 10px;">
+            <div id="content">
+                <table class="inner" width="100%" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <td>业务</td>
+                        <td>日期</td>
+                        <td>稳定性</td>
+                        <td>P99</td>
+                        <td>>>1s</td>
+                        <td>QPS</td>
+                    </tr>
+                    </thead>
+                    <tbody style="height: 50px">
+                    <tr>
+                        <td>{{.project}}</td>
+                        <td>{{.date}}</td>
+                        <td>{{.stability}}</td>
+                        <td>{{.p99}}</td>
+                        <td>{{.over1minute}}</td>
+                        <td>{{.qps}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr class="four">
+        <td style="padding: 10px;">
+            <span class="author">Designed by Major</span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
