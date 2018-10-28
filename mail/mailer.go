@@ -58,6 +58,7 @@ func (r *Request) sendMail() bool {
 		"<" + config.Email + ">\r\nSubject: " + r.subject + "\r\n" + MIME + "\r\n\r\n" + r.body)
 	//body := "To: " + r.to[0] + "\r\nSubject: " + r.subject + "\r\n" + MIME + "\r\n" + r.body
 	SMTP := fmt.Sprintf("%s:%d", config.Server, config.Port)
+	//smtp.NewClient('','')
 	if err := smtp.SendMail(SMTP, smtp.PlainAuth("", config.Email, config.Code, config.Server), config.Email, r.to, msg); err != nil {
 		return false
 	}
